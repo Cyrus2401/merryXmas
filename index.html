@@ -124,8 +124,15 @@
         100%{transform: scale(1);}
     }
 
-    #linkedin_logo{
-        height: 5vh;
+    #social_media{
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        justify-content: center;
+    }
+
+    #linkedin_logo, #github_logo{
+        height: 3vh;
     }
 
     #santa_claus{
@@ -228,7 +235,10 @@
 
             <p>Que cette période magique vous apporte paix et sérénité &#128519;</p>
 
-            <a target="_blank" href="https://www.linkedin.com/in/cyrus-hessou-b6a58122b/"><img src="linkedin.png" id="linkedin_logo" alt="github_logo"></a>
+            <div id="social_media">
+                <a target="_blank" href="https://www.linkedin.com/in/cyrus-hessou-b6a58122b/"><img src="linkedin.png" id="linkedin_logo" alt="github_logo"></a>
+                <a target="_blank" href="https://github.com/Cyrus2401/merryXmas"><img src="github.png" id="github_logo" alt="github_logo"></a>
+            </div>
 
             <audio id="Xmas_audio">
                 <source src="Lindsey_Stirling_-_Carol_of_the_Bells.mp3" type="audio/mpeg">
