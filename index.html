@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas by Cyrus HESSOU</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/christmasTree.gif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" 
+    integrity="sha512-6f7HT84a/AplPkpSRSKWqbseRTG4aRrhadjZezYQ0oVk/B+nm/US5KzQkyyOyh0Mn9cyDdChRdS9qaxJRHayww==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    main{
+        height: 100vh;
+        width: 100%;
+        background-color: #064E3B;
+        background: linear-gradient(#2b836b, #8cb8db);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;        
+    }
+
+    #containTreeAndText{
+        background-color: #fff;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid #fff;
+        border-radius: 15px;
+        padding: 0.5em;
+        position: relative;
+        text-align: center;
+    }
+
+    #santa_hat{
+        position: absolute;
+        top: -3em;
+        left: -2em;
+        align-items: flex-start;
+        height: 10vh;
+        cursor: pointer;
+    }
+
+    #Xmas_tree{
+        height: 40vh;
+    }
+
+    h3{
+        margin: 0.5em 0em;
+        font-family: Satisfy, cursive;
+        font-size: 3em;
+        color: SandyBrown;
+        text-shadow: 0.05em 0.05em 0 Brown, 0 0 0.5em green;
+        position: relative;
+        animation: merryXmas 2s infinite;
+    }
+
+    p{
+        font-family: "Montserrat", serif;
+        color: #064E3B;
+        font-size: 1em;
+        width: 60%;
+        text-align: center;
+        line-height: 1.8em;
+    }
+
+    hr{
+        width: 25%;
+        margin: 1em;
+        border: 1px solid #D1FAE5;
+    }
+
+    #presents{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #presents img{
+        height: 8vh;
+    }
+
+    @keyframes merryXmas {
+        0% {top: 0px;}
+        50% {top: 10px; }
+        100% {top: 0px;}
+    }
+
+    #Xmas_sound{
+        position: absolute;
+        bottom: -2em;
+        right: -2em;
+        align-items: flex-end;
+        height: 8vh;
+        color: red;
+        cursor: pointer;
+    }
+    
+    .soundMove{
+        animation : sound 1s infinite;
+    }
+
+    @keyframes sound {
+        0%{transform: scaleX(1);}
+        25%{transform: scaleX(1.05);}
+        50%{transform: scale(1.1);}
+        75%{transform: scale(1.05);}
+        50%{transform: scale(1.1);}
+        100%{transform: scale(1);}
+    }
+
+    #linkedin_logo{
+        height: 5vh;
+    }
+
+    #santa_claus{
+        height: 10vh;
+        position: relative;
+        left: 10px;
+        animation: santaClaus 1s infinite;
+    }
+
+    @keyframes santaClaus {
+        0%{transform: rotate(0deg);}
+        25%{transform: rotate(-10deg);}
+        50%{transform: rotate(0deg);}
+        100%{transform: rotate(10deg);}
+    }
+
+    @media only screen and (max-width: 1300px) {
+        #containTreeAndText{
+            width: 50%;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        #containTreeAndText{
+            width: 70%;
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        h3{
+            font-size: 2em;
+        }
+
+        p{
+            font-size: 0.8em;
+            width: 70%;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        #containTreeAndText{
+            width: 80%;
+        }
+
+        h3{
+            font-size: 2em;
+        }
+
+        p{
+            font-size: 0.8em;
+            width: 70%;
+        }
+
+        #santa_hat{
+            top: -2em;
+            height: 7vh;
+        }
+
+        #Xmas_tree{
+            height: 30vh;
+        }
+
+        #Xmas_sound{
+            bottom: -1em;
+            right: -1.5em;
+            height: 6vh;
+        }
+
+        #santa_claus{
+            height: 8vh;
+        }
+    }
+
+    
+</style>
+<body>
+    <main>
+
+        <div id="containTreeAndText">
+
+            <img src="santa-claus.png" id="santa_claus" alt="santa_claus">
+
+            <audio id="Xmas_Hohoho">
+                <source src="hohoho.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+            </audio>
+
+            <img src="santa-hat.png" id="santa_hat" alt="santa_hat" onclick="playHoHoHo()">
+            <img src="christmasTree.gif" id="Xmas_tree" alt="christmas_tree_GIF">
+
+            <div id="presents">
+                <img src="/openPresent.gif" alt="">
+                <img src="/openPresent.gif" alt="">
+                <img src="/openPresent.gif" alt="">
+            </div>
+
+            <h3>Merry Christmas</h3>
+
+            <hr>
+
+            <p>Que cette période magique vous apporte paix et sérénité &#128519;</p>
+
+            <a target="_blank" href="https://www.linkedin.com/in/cyrus-hessou-b6a58122b/"><img src="linkedin.png" id="linkedin_logo" alt="github_logo"></a>
+
+            <audio id="Xmas_audio">
+                <source src="Lindsey_Stirling_-_Carol_of_the_Bells.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+            </audio>
+
+            <img src="volume.png" id="Xmas_sound" class="" alt="Xmas_sound" onclick="playAudio()">
+        </div>
+        
+    </main>
+    <script>
+        $('#santa_claus').hide()
+
+        function playAudio() {
+
+            var audio = document.getElementById("Xmas_audio");
+            $('#Xmas_sound').attr('class', 'soundMove')
+
+            audio.play().catch(function (error) {
+                console.error("Impossible de jouer le son :", error);
+            });
+
+            audio.addEventListener('ended', function () {
+                $('#Xmas_sound').attr('class', '')
+            });
+        }
+
+        function playHoHoHo() {
+
+            var audio = document.getElementById("Xmas_Hohoho");
+            $('#Xmas_sound').attr('class', 'soundMove')
+            $('#santa_claus').show()
+
+            audio.play().catch(function (error) {
+                console.error("Impossible de jouer le son :", error);
+            });
+
+            audio.addEventListener('ended', function () {
+                $('#Xmas_sound').attr('class', '')
+                $('#santa_claus').hide()
+            });
+        }
+    </script>
+</body>
+</html>
